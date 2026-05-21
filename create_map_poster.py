@@ -370,6 +370,56 @@ def get_coordinates(city, country):
     raise ValueError(f"Could not find coordinates for {city}, {country}")
 
 
+def get_coordinates_for_location(location_query):
+    """
+    Fetch coordinates for a free-form place query such as a ZIP code,
+    city/state, address, landmark, or city/country.
+    """
+    coords = f"coords_location_{location_query.lower()}"
+    cached = cache_get(coords)
+    if cached:
+        print(f"✓ Using cached coordinates for {location_query}")
+        return cached
+
+    print("Looking up location...")
+    geolocator = Nominatim(user_agent="city_map_poster", timeout=10)
+
+    # Add a small delay to respect Nominatim's usage policy
+    time.sleep(1)
+
+    try:
+        location = geolocator.geocode(location_query)
+    except Exception as e:
+        raise ValueError(f"Geocoding failed for {location_query}: {e}") from e
+
+    if asyncio.iscoroutine(location):
+        try:
+            location = asyncio.run(location)
+        except RuntimeError as exc:
+            loop = asyncio.get_event_loop()
+            if loop.is_running():
+                raise RuntimeError(
+                    "Geocoder returned a coroutine while an event loop is already running. "
+                    "Run this script in a synchronous environment."
+                ) from exc
+            location = loop.run_until_complete(location)
+
+    if location:
+        addr = getattr(location, "address", None)
+        if addr:
+            print(f"✓ Found: {addr}")
+        else:
+            print("✓ Found location (address not available)")
+        print(f"✓ Coordinates: {location.latitude}, {location.longitude}")
+        try:
+            cache_set(coords, (location.latitude, location.longitude))
+        except CacheError as e:
+            print(e)
+        return (location.latitude, location.longitude)
+
+    raise ValueError(f"Could not find coordinates for {location_query}")
+
+
 def get_crop_limits(g_proj, center_lat_lon, fig, dist):
     """
     Crop inward to preserve aspect ratio while guaranteeing
@@ -874,6 +924,12 @@ Examples:
     parser.add_argument("--city", "-c", type=str, help="City name")
     parser.add_argument("--country", "-C", type=str, help="Country name")
     parser.add_argument(
+        "--location",
+        "-q",
+        type=str,
+        help="Free-form location query, such as ZIP code, city/state, address, or landmark",
+    )
+    parser.add_argument(
         "--latitude",
         "-lat",
         dest="latitude",
@@ -969,8 +1025,8 @@ Examples:
         sys.exit(0)
 
     # Validate required arguments
-    if not args.city or not args.country:
-        print("Error: --city and --country are required.\n")
+    if not args.location and (not args.city or not args.country):
+        print("Error: provide --location, or provide both --city and --country.\n")
         print_examples()
         sys.exit(1)
 
@@ -1018,15 +1074,19 @@ Examples:
             lon = parse(args.longitude)
             coords = [lat, lon]
             print(f"✓ Coordinates: {', '.join([str(i) for i in coords])}")
+        elif args.location:
+            coords = get_coordinates_for_location(args.location)
         else:
             coords = get_coordinates(args.city, args.country)
 
         for theme_name in themes_to_generate:
             THEME = load_theme(theme_name)
-            output_file = generate_output_filename(args.city, theme_name, args.format)
+            city_name = args.city or args.location
+            country_name = args.country or ""
+            output_file = generate_output_filename(city_name, theme_name, args.format)
             create_poster(
-                args.city,
-                args.country,
+                city_name,
+                country_name,
                 coords,
                 args.distance,
                 output_file,

@@ -1,0 +1,425 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4390CA9419E5D96F22503068 /* ZipLookupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4EE03B978F6014E6F2C924 /* ZipLookupService.swift */; };
+		46C76476B64385B12F812C9A /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74F2C38CD74871918A3D330 /* SidebarView.swift */; };
+		5F37590171A9E0FCD8E531F8 /* PosterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E4CE271865FEE5E7B0871 /* PosterRequest.swift */; };
+		618B6620B6925C5A537B9BAB /* AppDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA526CC6F0ED642C7C9C37A6 /* AppDesign.swift */; };
+		68045C298FA647E061F27547 /* CityPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3C2D44DB9D3BD3D041CCF1 /* CityPreset.swift */; };
+		6C31583135583155AB759302 /* PreviewPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B443435F6E7F1E964E7442 /* PreviewPane.swift */; };
+		7A06CBB490926F14564F8376 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C4C622E28882DABCF98E51 /* LogView.swift */; };
+		7A708CC46A37840BDEE877FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48EEA62EE4C99C4CA166D341 /* Assets.xcassets */; };
+		90F216F3876392ECB257C638 /* MapToPosterMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D69949C7B09C8FF59B9A234 /* MapToPosterMacApp.swift */; };
+		91FE10533ACA35FD96D44EF2 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883165D393C574193B9A076E /* Color+Hex.swift */; };
+		A2C394C6600A4E552CDD4D2A /* RepositoryLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E1BAA59D379920ABA095FA /* RepositoryLocator.swift */; };
+		A5A871301813927A2E5F0532 /* ThemeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5534E96118AA5015B3EC434 /* ThemeStore.swift */; };
+		AB63996110FEE63419A6BD8D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42997C9908A1EA28A5F65BE /* ContentView.swift */; };
+		D79B47866571ABF91C3D11C8 /* PosterTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2591FE9FE1F7E7D4B3653D10 /* PosterTheme.swift */; };
+		E3810DF26B162AAADFA5EBEF /* PosterGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C13682C44C093B71E605D4 /* PosterGenerator.swift */; };
+		EBD358E94CA9623938334C7E /* ComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E178A9D519AFA31D1A5E3B63 /* ComposerView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		16E1BAA59D379920ABA095FA /* RepositoryLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryLocator.swift; sourceTree = "<group>"; };
+		1F1E4CE271865FEE5E7B0871 /* PosterRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterRequest.swift; sourceTree = "<group>"; };
+		21C4C622E28882DABCF98E51 /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
+		2591FE9FE1F7E7D4B3653D10 /* PosterTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterTheme.swift; sourceTree = "<group>"; };
+		2E4EE03B978F6014E6F2C924 /* ZipLookupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipLookupService.swift; sourceTree = "<group>"; };
+		48EEA62EE4C99C4CA166D341 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		69C13682C44C093B71E605D4 /* PosterGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterGenerator.swift; sourceTree = "<group>"; };
+		74B443435F6E7F1E964E7442 /* PreviewPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPane.swift; sourceTree = "<group>"; };
+		883165D393C574193B9A076E /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
+		8D69949C7B09C8FF59B9A234 /* MapToPosterMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapToPosterMacApp.swift; sourceTree = "<group>"; };
+		A42997C9908A1EA28A5F65BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AD3C2D44DB9D3BD3D041CCF1 /* CityPreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPreset.swift; sourceTree = "<group>"; };
+		B4DDE6A1015EF70ED49322FB /* MapToPosterMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapToPosterMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D74F2C38CD74871918A3D330 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		E178A9D519AFA31D1A5E3B63 /* ComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposerView.swift; sourceTree = "<group>"; };
+		E5534E96118AA5015B3EC434 /* ThemeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeStore.swift; sourceTree = "<group>"; };
+		EA526CC6F0ED642C7C9C37A6 /* AppDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDesign.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		23457827DBC5B0052FD21B8E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AD3C2D44DB9D3BD3D041CCF1 /* CityPreset.swift */,
+				1F1E4CE271865FEE5E7B0871 /* PosterRequest.swift */,
+				2591FE9FE1F7E7D4B3653D10 /* PosterTheme.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		33A0D3839CAE11337028E48E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8D69949C7B09C8FF59B9A234 /* MapToPosterMacApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		36105E24BE4676D35FEE96F0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				69C13682C44C093B71E605D4 /* PosterGenerator.swift */,
+				16E1BAA59D379920ABA095FA /* RepositoryLocator.swift */,
+				E5534E96118AA5015B3EC434 /* ThemeStore.swift */,
+				2E4EE03B978F6014E6F2C924 /* ZipLookupService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		405B3C1BE568AF014E8DAE85 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				EA526CC6F0ED642C7C9C37A6 /* AppDesign.swift */,
+				883165D393C574193B9A076E /* Color+Hex.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		6C94869D967226E5AA907D75 = {
+			isa = PBXGroup;
+			children = (
+				D960D92127FF71305589CE3F /* Sources */,
+				B32830306C24BB3826D234CD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B15F00974BE22F5E159F096A /* MapToPosterMac */ = {
+			isa = PBXGroup;
+			children = (
+				33A0D3839CAE11337028E48E /* App */,
+				23457827DBC5B0052FD21B8E /* Models */,
+				C8A2A387B66EAA3C25DF71CD /* Resources */,
+				36105E24BE4676D35FEE96F0 /* Services */,
+				405B3C1BE568AF014E8DAE85 /* Support */,
+				F1B29B075E7F3B8D51A5D0C8 /* Views */,
+			);
+			path = MapToPosterMac;
+			sourceTree = "<group>";
+		};
+		B32830306C24BB3826D234CD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B4DDE6A1015EF70ED49322FB /* MapToPosterMac.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C8A2A387B66EAA3C25DF71CD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				48EEA62EE4C99C4CA166D341 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D960D92127FF71305589CE3F /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B15F00974BE22F5E159F096A /* MapToPosterMac */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		F1B29B075E7F3B8D51A5D0C8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E178A9D519AFA31D1A5E3B63 /* ComposerView.swift */,
+				A42997C9908A1EA28A5F65BE /* ContentView.swift */,
+				21C4C622E28882DABCF98E51 /* LogView.swift */,
+				74B443435F6E7F1E964E7442 /* PreviewPane.swift */,
+				D74F2C38CD74871918A3D330 /* SidebarView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A528AB374B0DACC7E86884B2 /* MapToPosterMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DA1570B35E1D108F23AFFF4 /* Build configuration list for PBXNativeTarget "MapToPosterMac" */;
+			buildPhases = (
+				D31CC32E7E4CD191BCAFB667 /* Sources */,
+				8503EA0C0F187A991B9D6DD2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MapToPosterMac;
+			packageProductDependencies = (
+			);
+			productName = MapToPosterMac;
+			productReference = B4DDE6A1015EF70ED49322FB /* MapToPosterMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		04279BEEF115F55197256208 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					A528AB374B0DACC7E86884B2 = {
+						DevelopmentTeam = "";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 6C8EF0A8B3A80DE76F96B7FB /* Build configuration list for PBXProject "MapToPosterMac" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 6C94869D967226E5AA907D75;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = B32830306C24BB3826D234CD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A528AB374B0DACC7E86884B2 /* MapToPosterMac */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8503EA0C0F187A991B9D6DD2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A708CC46A37840BDEE877FB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D31CC32E7E4CD191BCAFB667 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				618B6620B6925C5A537B9BAB /* AppDesign.swift in Sources */,
+				68045C298FA647E061F27547 /* CityPreset.swift in Sources */,
+				91FE10533ACA35FD96D44EF2 /* Color+Hex.swift in Sources */,
+				EBD358E94CA9623938334C7E /* ComposerView.swift in Sources */,
+				AB63996110FEE63419A6BD8D /* ContentView.swift in Sources */,
+				7A06CBB490926F14564F8376 /* LogView.swift in Sources */,
+				90F216F3876392ECB257C638 /* MapToPosterMacApp.swift in Sources */,
+				E3810DF26B162AAADFA5EBEF /* PosterGenerator.swift in Sources */,
+				5F37590171A9E0FCD8E531F8 /* PosterRequest.swift in Sources */,
+				D79B47866571ABF91C3D11C8 /* PosterTheme.swift in Sources */,
+				6C31583135583155AB759302 /* PreviewPane.swift in Sources */,
+				A2C394C6600A4E552CDD4D2A /* RepositoryLocator.swift in Sources */,
+				46C76476B64385B12F812C9A /* SidebarView.swift in Sources */,
+				A5A871301813927A2E5F0532 /* ThemeStore.swift in Sources */,
+				4390CA9419E5D96F22503068 /* ZipLookupService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		08A6A5AC60CCACFB8C36D1B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Map to Poster Generator";
+				INFOPLIST_KEY_CFBundleName = "Map to Poster Generator";
+				INFOPLIST_KEY_LSMinimumSystemVersion = 14.0;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maptoposter.mac;
+				PRODUCT_NAME = "Map to Poster Generator";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		39D17EE6C45FECB0DC2E84F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		4DC90FF526A45C359CD27E91 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		71CBB3BE7733FF721F6124F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Map to Poster Generator";
+				INFOPLIST_KEY_CFBundleName = "Map to Poster Generator";
+				INFOPLIST_KEY_LSMinimumSystemVersion = 14.0;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.maptoposter.mac;
+				PRODUCT_NAME = "Map to Poster Generator";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2DA1570B35E1D108F23AFFF4 /* Build configuration list for PBXNativeTarget "MapToPosterMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71CBB3BE7733FF721F6124F3 /* Debug */,
+				08A6A5AC60CCACFB8C36D1B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6C8EF0A8B3A80DE76F96B7FB /* Build configuration list for PBXProject "MapToPosterMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4DC90FF526A45C359CD27E91 /* Debug */,
+				39D17EE6C45FECB0DC2E84F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 04279BEEF115F55197256208 /* Project object */;
+}

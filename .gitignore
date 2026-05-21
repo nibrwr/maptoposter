@@ -8,6 +8,8 @@ venv/
 
 # Build artifacts
 *.egg-info/
+.build/
+DerivedData/
 dist/
 build/
 *.pyc
@@ -16,6 +18,8 @@ __pycache__/
 # IDE
 .idea/
 .vscode/
+*.xcuserstate
+xcuserdata/
 *.swp
 *.swo
 *.sublime-*

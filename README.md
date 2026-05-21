@@ -45,6 +45,39 @@ pip install -r requirements.txt
 
 ## Usage
 
+### macOS App Prototype
+
+This fork includes a SwiftUI macOS app, Map to Poster Generator, that wraps the
+existing Python poster generator. Open `MapToPosterMac.xcodeproj` in Xcode and
+run the `MapToPosterMac` scheme, or build from the command line:
+
+```bash
+xcodebuild -project MapToPosterMac.xcodeproj -scheme MapToPosterMac -configuration Debug -derivedDataPath build/XcodeDerivedData CODE_SIGNING_ALLOWED=NO build
+./script/build_and_run.sh
+```
+
+The app reads themes from `themes/`, calls `create_map_poster.py` in the repo
+root, and previews newly generated PNG posters from `posters/`. Install the
+Python dependencies first with `uv sync --locked` or a local virtual environment
+from `requirements.txt`; the app will use `uv run` when `uv` is available and
+fall back to `python3` otherwise.
+
+Location search accepts free-form geocoding queries through OpenStreetMap
+Nominatim, including ZIP codes, `city, state`, addresses, landmarks, and
+`city, country`.
+
+To set up the Python environment for the app:
+
+```bash
+./script/setup_python.sh
+```
+
+The Xcode project is generated from `project.yml` with XcodeGen:
+
+```bash
+xcodegen generate
+```
+
 ### Generate Poster
 
 If you're using `uv`:

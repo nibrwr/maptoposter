@@ -1,0 +1,44 @@
+name: MapToPosterMac
+options:
+  bundleIdPrefix: com.maptoposter
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    DEVELOPMENT_TEAM: ""
+    CODE_SIGN_STYLE: Automatic
+    SWIFT_VERSION: "5.0"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+targets:
+  MapToPosterMac:
+    type: application
+    platform: macOS
+    deploymentTarget: "14.0"
+    sources:
+      - path: Sources/MapToPosterMac
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.maptoposter.mac
+        PRODUCT_NAME: Map to Poster Generator
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: Map to Poster Generator
+        INFOPLIST_KEY_CFBundleName: Map to Poster Generator
+        INFOPLIST_KEY_LSMinimumSystemVersion: "14.0"
+        INFOPLIST_KEY_NSPrincipalClass: NSApplication
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+schemes:
+  MapToPosterMac:
+    build:
+      targets:
+        MapToPosterMac: all
+    run:
+      config: Debug
+      environmentVariables:
+        MAPTOPOSTER_ROOT: ${PROJECT_DIR}
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
