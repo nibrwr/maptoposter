@@ -1,15 +1,67 @@
+import PDFKit
 import SwiftUI
+import WebKit
 
 struct PreviewPane: View {
     let posterURL: URL?
     let request: PosterRequest
     let selectedTheme: PosterTheme?
+    let openPoster: () -> Void
+    let revealPoster: () -> Void
+    let exportPoster: () -> Void
+    let openLibrary: () -> Void
 
     var body: some View {
         VStack(alignment: .leading, spacing: 14) {
-            Label("Poster Preview", systemImage: "photo")
-                .font(.headline)
-                .foregroundStyle(AppDesign.inkBlue)
+            HStack(spacing: 10) {
+                Label("Poster Preview", systemImage: "photo")
+                    .font(AppDesign.panelTitleFont)
+                    .foregroundStyle(AppDesign.inkBlue)
+
+                Spacer()
+
+                if posterURL != nil {
+                    Button {
+                        openPoster()
+                    } label: {
+                        Label("Open", systemImage: "arrow.up.right.square")
+                    }
+                    .buttonStyle(.bordered)
+                    .buttonBorderShape(.roundedRectangle(radius: AppDesign.compactRadius))
+                    .buttonLift()
+                    .help("Open the generated poster in the default app.")
+
+                    Button {
+                        revealPoster()
+                    } label: {
+                        Label("Reveal", systemImage: "folder")
+                    }
+                    .buttonStyle(.bordered)
+                    .buttonBorderShape(.roundedRectangle(radius: AppDesign.compactRadius))
+                    .buttonLift()
+                    .help("Reveal the generated poster in Finder.")
+
+                    Button {
+                        exportPoster()
+                    } label: {
+                        Label("Export", systemImage: "square.and.arrow.up")
+                    }
+                    .buttonStyle(.bordered)
+                    .buttonBorderShape(.roundedRectangle(radius: AppDesign.compactRadius))
+                    .buttonLift()
+                    .help("Save a copy of the generated poster somewhere else.")
+                }
+
+                Button {
+                    openLibrary()
+                } label: {
+                    Label("Library", systemImage: "rectangle.stack")
+                }
+                .buttonStyle(.bordered)
+                .buttonBorderShape(.roundedRectangle(radius: AppDesign.compactRadius))
+                .buttonLift()
+                .help("Open the local generated poster library.")
+            }
 
             posterPreview
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -19,19 +71,15 @@ struct PreviewPane: View {
 
     @ViewBuilder
     private var posterPreview: some View {
-        if let posterURL, posterURL.pathExtension.lowercased() == "png", let image = NSImage(contentsOf: posterURL) {
+        if let posterURL {
             VStack(spacing: 12) {
-                Image(nsImage: image)
-                    .resizable()
-                    .scaledToFit()
-                    .clipShape(RoundedRectangle(cornerRadius: AppDesign.compactRadius, style: .continuous))
-                    .shadow(radius: 18, y: 10)
-                    .accessibilityLabel("Generated poster preview for \(request.posterCity)")
+                PosterRenderedPreview(url: posterURL, request: request)
 
                 Text(posterURL.lastPathComponent)
-                    .font(.caption)
+                    .font(AppDesign.metadataFont)
                     .foregroundStyle(.secondary)
                     .lineLimit(1)
+                    .textSelection(.enabled)
             }
         } else {
             VStack(spacing: 16) {
@@ -55,11 +103,11 @@ struct PreviewPane: View {
 
                         VStack(spacing: 8) {
                             Text(request.posterCity.isEmpty ? "Poster Preview" : request.posterCity)
-                                .font(.title2.weight(.semibold))
+                                .font(.title2)
                                 .foregroundStyle(selectedTheme?.textColor ?? AppDesign.inkBlue)
                                 .lineLimit(1)
 
-                            Text("Generate a PNG to preview it here. SVG and PDF outputs are still saved to posters/.")
+                            Text("PNG previews appear here. SVG and PDF outputs are saved to posters/.")
                                 .font(.callout)
                                 .foregroundStyle(AppDesign.inkBlue.opacity(0.72))
                                 .multilineTextAlignment(.center)
@@ -79,6 +127,125 @@ struct PreviewPane: View {
                 .accessibilityLabel("Preview placeholder for \(request.locationQuery)")
             }
         }
+    }
+}
+
+private struct PosterRenderedPreview: View {
+    let url: URL
+    let request: PosterRequest
+
+    private var aspectRatio: CGFloat {
+        let dimensions = request.effectiveDimensions ?? (request.width, request.height)
+        guard dimensions.height > 0 else { return 3 / 4 }
+        return CGFloat(dimensions.width / dimensions.height)
+    }
+
+    var body: some View {
+        preview
+            .aspectRatio(aspectRatio, contentMode: .fit)
+            .frame(maxWidth: 540, maxHeight: .infinity)
+            .clipShape(RoundedRectangle(cornerRadius: AppDesign.compactRadius, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: AppDesign.compactRadius, style: .continuous)
+                    .stroke(.white.opacity(0.82), lineWidth: 1)
+            }
+            .shadow(color: .black.opacity(0.14), radius: 18, y: 10)
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel("\(url.pathExtension.uppercased()) generated poster preview for \(request.posterCity)")
+    }
+
+    @ViewBuilder
+    private var preview: some View {
+        switch url.pathExtension.lowercased() {
+        case "png":
+            if let image = NSImage(contentsOf: url) {
+                Image(nsImage: image)
+                    .resizable()
+                    .scaledToFit()
+            } else {
+                UnsupportedPreview(url: url, message: "PNG preview unavailable")
+            }
+        case "pdf":
+            PDFPosterPreview(url: url)
+                .id(url)
+        case "svg":
+            SVGPosterPreview(url: url)
+                .id(url)
+        default:
+            UnsupportedPreview(url: url, message: "\(url.pathExtension.uppercased()) saved")
+        }
+    }
+}
+
+private struct PDFPosterPreview: NSViewRepresentable {
+    let url: URL
+
+    func makeNSView(context: Context) -> PDFView {
+        let view = PDFView()
+        view.autoScales = true
+        view.displayMode = .singlePage
+        view.displayDirection = .vertical
+        view.displaysPageBreaks = false
+        view.backgroundColor = .clear
+        return view
+    }
+
+    func updateNSView(_ view: PDFView, context: Context) {
+        if view.document?.documentURL != url {
+            view.document = PDFDocument(url: url)
+        }
+        view.autoScales = true
+    }
+}
+
+private struct SVGPosterPreview: NSViewRepresentable {
+    let url: URL
+
+    func makeNSView(context: Context) -> WKWebView {
+        let configuration = WKWebViewConfiguration()
+        let view = WKWebView(frame: .zero, configuration: configuration)
+        view.setValue(false, forKey: "drawsBackground")
+        view.navigationDelegate = context.coordinator
+        return view
+    }
+
+    func updateNSView(_ view: WKWebView, context: Context) {
+        guard context.coordinator.loadedURL != url else { return }
+        context.coordinator.loadedURL = url
+        view.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
+    }
+
+    func makeCoordinator() -> Coordinator {
+        Coordinator()
+    }
+
+    final class Coordinator: NSObject, WKNavigationDelegate {
+        var loadedURL: URL?
+    }
+}
+
+private struct UnsupportedPreview: View {
+    let url: URL
+    let message: String
+
+    var body: some View {
+        VStack(spacing: 12) {
+            Image(systemName: "doc.badge.arrow.up")
+                .font(.largeTitle)
+                .foregroundStyle(AppDesign.clearBlue)
+
+            Text(message)
+                .font(.title3)
+                .foregroundStyle(AppDesign.inkBlue)
+
+            Text(url.lastPathComponent)
+                .font(AppDesign.metadataFont)
+                .foregroundStyle(.secondary)
+                .lineLimit(1)
+                .textSelection(.enabled)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(AppDesign.panelFill)
     }
 }
 

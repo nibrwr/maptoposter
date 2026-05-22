@@ -23,7 +23,7 @@ struct SidebarView: View {
                                 Text(preset.city)
                                     .lineLimit(1)
                                 Text("\(preset.country) · \(preset.themeSlug)")
-                                    .font(.caption)
+                                    .font(AppDesign.metadataFont)
                                     .foregroundStyle(.secondary)
                                     .lineLimit(1)
                             }
@@ -48,7 +48,7 @@ struct SidebarView: View {
                                 Text(theme.displayName)
                                     .lineLimit(1)
                                 Text(theme.slug)
-                                    .font(.caption)
+                                    .font(AppDesign.metadataFont)
                                     .foregroundStyle(.secondary)
                                     .lineLimit(1)
                             }

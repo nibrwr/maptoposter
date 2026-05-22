@@ -13,7 +13,13 @@ let package = Package(
     targets: [
         .executableTarget(
             name: "MapToPosterMac",
-            path: "Sources/MapToPosterMac"
+            path: "Sources/MapToPosterMac",
+            exclude: ["Resources"]
+        ),
+        .testTarget(
+            name: "MapToPosterMacTests",
+            dependencies: ["MapToPosterMac"],
+            path: "Tests/MapToPosterMacTests"
         )
     ]
 )

@@ -1,0 +1,15 @@
+{
+  "name": "Sooner",
+  "description": "Crimson roads and type on warm cream - bold collegiate contrast",
+  "bg": "#FFF4E4",
+  "text": "#841617",
+  "gradient_color": "#FFF4E4",
+  "water": "#F4E2CF",
+  "parks": "#F7EAD7",
+  "road_motorway": "#841617",
+  "road_primary": "#A31D21",
+  "road_secondary": "#BD4448",
+  "road_tertiary": "#D06A6D",
+  "road_residential": "#E3A0A1",
+  "road_default": "#BD4448"
+}

@@ -57,14 +57,21 @@ xcodebuild -project MapToPosterMac.xcodeproj -scheme MapToPosterMac -configurati
 ```
 
 The app reads themes from `themes/`, calls `create_map_poster.py` in the repo
-root, and previews newly generated PNG posters from `posters/`. Install the
-Python dependencies first with `uv sync --locked` or a local virtual environment
-from `requirements.txt`; the app will use `uv run` when `uv` is available and
-fall back to `python3` otherwise.
+root, and previews newly generated posters from the selected save folder. The
+default save folder is the app's Application Support poster library, and users
+can choose another output folder from the composer. It also keeps a local poster
+library with metadata, redacted run logs, export/reveal actions, and reusable
+settings from previous posters.
+Install the Python dependencies first with `uv sync --locked` or a local virtual
+environment from `requirements.txt`; the app prefers `.venv/bin/python3`, then
+trusted system locations for `uv` or `python3`.
 
 Location search accepts free-form geocoding queries through OpenStreetMap
 Nominatim, including ZIP codes, `city, state`, addresses, landmarks, and
-`city, country`.
+`city, country`. ZIP lookup and poster generation send the entered location to
+OpenStreetMap/Nominatim for geocoding. Enable Cache only in the app when you
+want to generate only from local cached data without making new OpenStreetMap
+requests.
 
 To set up the Python environment for the app:
 
@@ -98,6 +105,7 @@ python create_map_poster.py --city <city> --country <country> [options]
 |--------|-------|-------------|
 | `--city` | `-c` | City name (used for geocoding) |
 | `--country` | `-C` | Country name (used for geocoding) |
+| `--location` | `-q` | Free-form location query, such as ZIP code, city/state, address, landmark, or city/country |
 
 ### Optional Flags
 
@@ -110,8 +118,12 @@ python create_map_poster.py --city <city> --country <country> [options]
 | **OPTIONAL:** `--distance` | `-d` | Map radius in meters | 18000 |
 | **OPTIONAL:** `--list-themes` | | List all available themes | |
 | **OPTIONAL:** `--all-themes` | | Generate posters for all available themes | |
-| **OPTIONAL:** `--width` | `-W` | Image width in inches | 12 (max: 20) |
-| **OPTIONAL:** `--height` | `-H` | Image height in inches | 16 (max: 20) |
+| **OPTIONAL:** `--width` | `-W` | Image width in inches | 12 (max: 48) |
+| **OPTIONAL:** `--height` | `-H` | Image height in inches | 16 (max: 48) |
+| **OPTIONAL:** `--cache-only` | | Use only cached geocoding and map data. No new OpenStreetMap requests are made. | false |
+| **OPTIONAL:** `--detail-level` | | Output detail recipe: `auto`, `clean`, or `rich` | auto |
+| **OPTIONAL:** `--inset` | | Town-detail inset behavior: `auto`, `on`, or `off` | auto |
+| **OPTIONAL:** `--no-enhance-sparse` | | Disable automatic sparse-map enhancements for rural and suburban areas | false |
 
 ### Multilingual Support - i18n
 
@@ -234,9 +246,14 @@ python create_map_poster.py -c "Tokyo" -C "Japan" --all-themes
 | 8000-12000m | Medium cities, focused downtown (Paris, Barcelona) |
 | 15000-20000m | Large metros, full city view (Tokyo, Mumbai) |
 
+`--detail-level auto` analyzes street-network density and adapts road weight,
+feature layers, texture, centering, and optional town-detail insets so suburban
+and rural posters retain visual interest. Use `clean` for a minimal map and
+`rich` when you want stronger streets, land/water features, labels, and texture.
+
 ## Themes
 
-17 themes available in `themes/` directory:
+18 themes available in `themes/` directory:
 
 | Theme | Style |
 |-------|-------|
@@ -252,6 +269,7 @@ python create_map_poster.py -c "Tokyo" -C "Japan" --all-themes
 | `emerald`      | Lush dark green aesthetic |
 | `forest` | Deep greens and sage |
 | `ocean` | Blues and teals for coastal cities |
+| `sooner` | Crimson on warm cream |
 | `terracotta` | Mediterranean warmth |
 | `sunset` | Warm oranges and pinks |
 | `autumn` | Seasonal burnt oranges and reds |
@@ -265,6 +283,10 @@ Posters are saved to `posters/` directory with format:
 ```text
 {city}_{theme}_{YYYYMMDD_HHMMSS}.png
 ```
+
+The macOS app passes an explicit `--output` path in Application Support so it
+can preview the exact file created by the generator. The CLI also supports
+`--output /path/to/poster.png` for single-theme generation.
 
 ## Adding Custom Themes
 

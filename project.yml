@@ -21,6 +21,7 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.maptoposter.mac
         PRODUCT_NAME: Map to Poster Generator
+        ENABLE_HARDENED_RUNTIME: YES
         GENERATE_INFOPLIST_FILE: YES
         INFOPLIST_KEY_CFBundleDisplayName: Map to Poster Generator
         INFOPLIST_KEY_CFBundleName: Map to Poster Generator

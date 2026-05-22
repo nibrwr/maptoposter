@@ -12,17 +12,22 @@
 		5F37590171A9E0FCD8E531F8 /* PosterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1E4CE271865FEE5E7B0871 /* PosterRequest.swift */; };
 		618B6620B6925C5A537B9BAB /* AppDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA526CC6F0ED642C7C9C37A6 /* AppDesign.swift */; };
 		68045C298FA647E061F27547 /* CityPreset.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD3C2D44DB9D3BD3D041CCF1 /* CityPreset.swift */; };
+		6A3C2E8B4E8B4A7EA52C0031 /* PosterLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3C2E8A4E8B4A7EA52C0031 /* PosterLibrary.swift */; };
 		6C31583135583155AB759302 /* PreviewPane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B443435F6E7F1E964E7442 /* PreviewPane.swift */; };
 		7A06CBB490926F14564F8376 /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C4C622E28882DABCF98E51 /* LogView.swift */; };
 		7A708CC46A37840BDEE877FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48EEA62EE4C99C4CA166D341 /* Assets.xcassets */; };
+		7F34D55B6A4E4A179DD21001 /* GeneratedPoster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F34D55A6A4E4A179DD21001 /* GeneratedPoster.swift */; };
 		90F216F3876392ECB257C638 /* MapToPosterMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D69949C7B09C8FF59B9A234 /* MapToPosterMacApp.swift */; };
 		91FE10533ACA35FD96D44EF2 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 883165D393C574193B9A076E /* Color+Hex.swift */; };
 		A2C394C6600A4E552CDD4D2A /* RepositoryLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16E1BAA59D379920ABA095FA /* RepositoryLocator.swift */; };
 		A5A871301813927A2E5F0532 /* ThemeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5534E96118AA5015B3EC434 /* ThemeStore.swift */; };
 		AB63996110FEE63419A6BD8D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42997C9908A1EA28A5F65BE /* ContentView.swift */; };
+		B1292E2159F94C9DBB392001 /* NetworkPreflightService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1292E2059F94C9DBB392001 /* NetworkPreflightService.swift */; };
 		D79B47866571ABF91C3D11C8 /* PosterTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2591FE9FE1F7E7D4B3653D10 /* PosterTheme.swift */; };
 		E3810DF26B162AAADFA5EBEF /* PosterGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C13682C44C093B71E605D4 /* PosterGenerator.swift */; };
 		EBD358E94CA9623938334C7E /* ComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E178A9D519AFA31D1A5E3B63 /* ComposerView.swift */; };
+		F54E27569C684CB8B0E42001 /* PosterLibrarySheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54E27559C684CB8B0E42001 /* PosterLibrarySheet.swift */; };
+		FE19892BA86BF238FC1A9722 /* AppStorageLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A39AB567D965F9E2B73C3FF /* AppStorageLocations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,17 +37,22 @@
 		2591FE9FE1F7E7D4B3653D10 /* PosterTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterTheme.swift; sourceTree = "<group>"; };
 		2E4EE03B978F6014E6F2C924 /* ZipLookupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipLookupService.swift; sourceTree = "<group>"; };
 		48EEA62EE4C99C4CA166D341 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5A39AB567D965F9E2B73C3FF /* AppStorageLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageLocations.swift; sourceTree = "<group>"; };
+		6A3C2E8A4E8B4A7EA52C0031 /* PosterLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterLibrary.swift; sourceTree = "<group>"; };
 		69C13682C44C093B71E605D4 /* PosterGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterGenerator.swift; sourceTree = "<group>"; };
 		74B443435F6E7F1E964E7442 /* PreviewPane.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPane.swift; sourceTree = "<group>"; };
+		7F34D55A6A4E4A179DD21001 /* GeneratedPoster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratedPoster.swift; sourceTree = "<group>"; };
 		883165D393C574193B9A076E /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		8D69949C7B09C8FF59B9A234 /* MapToPosterMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapToPosterMacApp.swift; sourceTree = "<group>"; };
 		A42997C9908A1EA28A5F65BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AD3C2D44DB9D3BD3D041CCF1 /* CityPreset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityPreset.swift; sourceTree = "<group>"; };
+		B1292E2059F94C9DBB392001 /* NetworkPreflightService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkPreflightService.swift; sourceTree = "<group>"; };
 		B4DDE6A1015EF70ED49322FB /* MapToPosterMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapToPosterMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D74F2C38CD74871918A3D330 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		E178A9D519AFA31D1A5E3B63 /* ComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposerView.swift; sourceTree = "<group>"; };
 		E5534E96118AA5015B3EC434 /* ThemeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeStore.swift; sourceTree = "<group>"; };
 		EA526CC6F0ED642C7C9C37A6 /* AppDesign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDesign.swift; sourceTree = "<group>"; };
+		F54E27559C684CB8B0E42001 /* PosterLibrarySheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterLibrarySheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -50,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				AD3C2D44DB9D3BD3D041CCF1 /* CityPreset.swift */,
+				7F34D55A6A4E4A179DD21001 /* GeneratedPoster.swift */,
 				1F1E4CE271865FEE5E7B0871 /* PosterRequest.swift */,
 				2591FE9FE1F7E7D4B3653D10 /* PosterTheme.swift */,
 			);
@@ -67,7 +78,10 @@
 		36105E24BE4676D35FEE96F0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				5A39AB567D965F9E2B73C3FF /* AppStorageLocations.swift */,
+				B1292E2059F94C9DBB392001 /* NetworkPreflightService.swift */,
 				69C13682C44C093B71E605D4 /* PosterGenerator.swift */,
+				6A3C2E8A4E8B4A7EA52C0031 /* PosterLibrary.swift */,
 				16E1BAA59D379920ABA095FA /* RepositoryLocator.swift */,
 				E5534E96118AA5015B3EC434 /* ThemeStore.swift */,
 				2E4EE03B978F6014E6F2C924 /* ZipLookupService.swift */,
@@ -135,6 +149,7 @@
 				E178A9D519AFA31D1A5E3B63 /* ComposerView.swift */,
 				A42997C9908A1EA28A5F65BE /* ContentView.swift */,
 				21C4C622E28882DABCF98E51 /* LogView.swift */,
+				F54E27559C684CB8B0E42001 /* PosterLibrarySheet.swift */,
 				74B443435F6E7F1E964E7442 /* PreviewPane.swift */,
 				D74F2C38CD74871918A3D330 /* SidebarView.swift */,
 			);
@@ -213,15 +228,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				618B6620B6925C5A537B9BAB /* AppDesign.swift in Sources */,
+				FE19892BA86BF238FC1A9722 /* AppStorageLocations.swift in Sources */,
 				68045C298FA647E061F27547 /* CityPreset.swift in Sources */,
 				91FE10533ACA35FD96D44EF2 /* Color+Hex.swift in Sources */,
 				EBD358E94CA9623938334C7E /* ComposerView.swift in Sources */,
 				AB63996110FEE63419A6BD8D /* ContentView.swift in Sources */,
 				7A06CBB490926F14564F8376 /* LogView.swift in Sources */,
 				90F216F3876392ECB257C638 /* MapToPosterMacApp.swift in Sources */,
+				B1292E2159F94C9DBB392001 /* NetworkPreflightService.swift in Sources */,
 				E3810DF26B162AAADFA5EBEF /* PosterGenerator.swift in Sources */,
+				6A3C2E8B4E8B4A7EA52C0031 /* PosterLibrary.swift in Sources */,
 				5F37590171A9E0FCD8E531F8 /* PosterRequest.swift in Sources */,
 				D79B47866571ABF91C3D11C8 /* PosterTheme.swift in Sources */,
+				7F34D55B6A4E4A179DD21001 /* GeneratedPoster.swift in Sources */,
+				F54E27569C684CB8B0E42001 /* PosterLibrarySheet.swift in Sources */,
 				6C31583135583155AB759302 /* PreviewPane.swift in Sources */,
 				A2C394C6600A4E552CDD4D2A /* RepositoryLocator.swift in Sources */,
 				46C76476B64385B12F812C9A /* SidebarView.swift in Sources */,
@@ -238,6 +258,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Map to Poster Generator";
 				INFOPLIST_KEY_CFBundleName = "Map to Poster Generator";
@@ -382,6 +403,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Map to Poster Generator";
 				INFOPLIST_KEY_CFBundleName = "Map to Poster Generator";
